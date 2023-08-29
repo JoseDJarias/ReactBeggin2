@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
+import RickAndMortyV1 from './components/RickAndMortyV1';
+import RickAndMortyV2 from './components/RickAndMortyV2';
+import ShopList from './components/ShopList';
+import ThemeSelector from './components/ThemeSelector'
+import TitleChanger from './components/TitleChanger';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RickAndMortyV2/>
     </div>
   );
 }
