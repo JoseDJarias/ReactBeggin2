@@ -1,4 +1,5 @@
 import './App.css';
+import FavoritePokemon from './components/FavoritePokemon';
 import RickAndMortyV1 from './components/RickAndMortyV1';
 import RickAndMortyV2 from './components/RickAndMortyV2';
 import ShopList from './components/ShopList';
@@ -8,7 +9,7 @@ import TitleChanger from './components/TitleChanger';
 function App() {
   return (
     <div className="App">
-      <RickAndMortyV2/>
+      <FavoritePokemon/>
     </div>
   );
 }

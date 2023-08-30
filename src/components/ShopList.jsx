@@ -24,11 +24,23 @@ function ShopList() {
     const handleTaskCompleted = (index) =>{
         //completar tareas
         //deje la lista como lo tiene, pero en la posicion index cambie el valor de completed
-        const updatedItems = [...items];
-        updatedItems[index].completed = !updatedItems[index].completed  ;
-        setItems(updatedItems);
-        items[index].completed? setTaskCounter(taskCounter+1): setTaskCounter(taskCounter-1)
+        if (items.length >0) {      
+            const updatedItems = [...items];
+            updatedItems[index].completed = !updatedItems[index].completed  ;
+            setItems(updatedItems);
+            items[index].completed? setTaskCounter(taskCounter+1): setTaskCounter(taskCounter-1)
+        }
 
+    }
+
+    const handleEdit = (index) =>{
+        
+        items.splice(index,1);
+        setItems(...items);
+        if (taskCounter.length >0) {
+            setTaskCounter(taskCounter-1)
+        }
+        console.log(items)
     }
     return (
         <div>
@@ -36,11 +48,15 @@ function ShopList() {
 
                 {
                     items.map((item,index) =>(
-                       <li key={index}
-                       onClick={() =>handleTaskCompleted(index)}
-                       style={{textDecoration: item.completed? 'line-through': 'none'}}>
+                        <li key={index}
+                        onClick={() =>handleTaskCompleted(index)}
+
+                        style={{textDecoration: item.completed? 'line-through': 'none'}}>
+                        <input type='checkbox'/>
                         
                             {item.text}
+                        <button onClick={()=>handleEdit(index)}>Edit</button>
+
                        </li> 
                     ))
                 }

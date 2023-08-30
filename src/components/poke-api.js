@@ -1,8 +1,8 @@
-const API_URL = 'https://64e7584ab0fd9648b78fcfdc.mockapi.io/favorites/v1';
+const API_URL = 'https://64ee628d219b3e2873c32c89.mockapi.io/Favorites/';
 
 async function fetchFavorites() {
   try {
-    const response = await fetch(`${API_URL}/favorite-pokemon`);
+    const response = await fetch(`${API_URL}/beispiel-pokemon`);
     return response.json();
   } catch (error) {
     console.error('Error fetching favorites:', error);
@@ -12,7 +12,7 @@ async function fetchFavorites() {
 
 async function addFavorite(favorite) {
   try {
-    const response = await fetch(`${API_URL}/favorite-pokemon`, {
+    const response = await fetch(`${API_URL}/beispiel-pokemon`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ async function addFavorite(favorite) {
 
 async function updateFavorite(id, changes) {
   try {
-    const response = await fetch(`${API_URL}/favorite-pokemon/${id}`, {
+    const response = await fetch(`${API_URL}/beispiel-pokemon/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ async function updateFavorite(id, changes) {
 
 async function deleteFavorite(id) {
   try {
-    await fetch(`${API_URL}/favorite-pokemon/${id}`, {
+    await fetch(`${API_URL}/beispiel-pokemon/${id}`, {
       method: 'DELETE',
     });
     console.log(`Favorite with ID ${id} deleted.`);
